@@ -18,7 +18,6 @@ namespace DataAccess.Concrete.EntityFramework
 
         public WashingModuleContext(DbContextOptions<WashingModuleContext> options) : base(options)
         {
-
         }
 
         public WashingModuleContext() 

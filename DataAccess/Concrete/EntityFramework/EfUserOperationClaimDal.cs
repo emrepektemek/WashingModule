@@ -11,10 +11,15 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfUserOperationClaimDal : EfEntityRepositoryBase<UserOperationClaim, OrderSystemContext>, IUserOperationClaimDal
+    public class EfUserOperationClaimDal : EfEntityRepositoryBase<UserOperationClaim, WashingModuleContext>, IUserOperationClaimDal
     {
 
+        private WashingModuleContext _context;
 
-        
+        public EfUserOperationClaimDal(WashingModuleContext context) : base(context)
+        {
+            _context = context;
+        }   
+
     }
 }

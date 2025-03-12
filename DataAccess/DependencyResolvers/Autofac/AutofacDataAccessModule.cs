@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.DependencyResolvers.Autofac
 {
-    public class DataAccessModule : Module
+    public class AutofacDataAccessModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

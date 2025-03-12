@@ -11,5 +11,14 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfOrderProcessDal: EfEntityRepositoryBase<OrderProcess, WashingModuleContext>, IOrderProcessDal    
     {
+
+        private WashingModuleContext _context;
+
+        public EfOrderProcessDal(WashingModuleContext context) : base(context)
+        {
+            _context = context;
+        }
+
+
     }
 }

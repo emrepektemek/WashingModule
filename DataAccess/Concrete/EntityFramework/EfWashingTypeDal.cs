@@ -11,6 +11,11 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfWashingTypeDal: EfEntityRepositoryBase<WashingType, WashingModuleContext>, IWashingTypeDal   
     {
+        private WashingModuleContext _context;
 
+        public EfWashingTypeDal(WashingModuleContext context) : base(context)
+        {
+            _context = context;
+        }   
     }
 }
