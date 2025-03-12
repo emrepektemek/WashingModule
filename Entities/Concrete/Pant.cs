@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Category: AuditBaseEntity, IEntity
+    public class Pant: AuditBaseEntity, IEntity 
     {
-        public string CategoryName { get; set; }
-        public string? Description { get; set; }
-    
+        public int FabricId { get; set; }
+
+        public string ModelName { get; set; }
     }
 }

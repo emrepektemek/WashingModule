@@ -9,12 +9,11 @@ namespace Entities.Concrete
 {
     public class Order: AuditBaseEntity, IEntity
     {
-        public int CustomerId { get; set; }
-        public int ProductId { get; set; }
-        public int Quantity { get; set; }
-        public DateTime OrderDate { get; set; }
-        public DateTime? ShipDate { get; set; }
-        public string ShippingAddress { get; set; }
-        public bool? IsApproved { get; set; }
+        public string OrderId { get; set; }
+        public int PantId { get; set; }
+        public int WashingTypeId { get; set; }
+        public int? PantQuantity { get; set; }
+        public string? Shift { get; set; }
+
     }
 }
