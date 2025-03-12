@@ -21,6 +21,10 @@ namespace DataAccess.Concrete.EntityFramework
 
         }
 
+        public WashingModuleContext() 
+        {
+        }
+
         public DbSet<Defect> Defects { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Fabric> Fabrics { get; set; }
