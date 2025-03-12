@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCategoryDal : EfEntityRepositoryBase<Category, OrderSystemContext>, ICategoryDal
+    public class EfOrderProcessDal: EfEntityRepositoryBase<OrderProcess, WashingModuleContext>, IOrderProcessDal    
     {
     }
 }

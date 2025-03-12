@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfWarehouseDal : EfEntityRepositoryBase<Warehouse, OrderSystemContext>, IWarehouseDal
+    public class EfEmployeeDal : EfEntityRepositoryBase<Employee, WashingModuleContext>, IEmployeeDal 
     {
+
     }
 }

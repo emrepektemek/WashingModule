@@ -9,19 +9,22 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class OrderSystemContext:DbContext
+    public class WashingModuleContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=MSI;Database=OrderSystem;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer(@"Server=MSI;Database=WashingModule;Trusted_Connection=True;TrustServerCertificate=True;");
         }
 
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<Defect> Defects { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Fabric> Fabrics { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Warehouse> Warehouses { get; set; }
+        public DbSet<Machine> Machines { get; set; }
+        public DbSet<OrderProcess> OrderProcesses { get; set; }
+        public DbSet<Pant> Pants { get; set; }
+        public DbSet<WashingType> WashingTypes { get; set; }
+
 
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<User> Users { get; set; }

@@ -12,6 +12,10 @@ namespace DataAccess.Abstract
 {
     public interface IOrderDal: IEntityRepository<Order>
     {
+        /* 
+         * 
+        // bunlar OrderSystem'den kalma
+
         List<OrderReportDto> GetOrderReports();
 
         List<UserOrderOrderReportDto> GetUserOrderReports(int customerId);
@@ -20,6 +24,6 @@ namespace DataAccess.Abstract
 
         Order UpdateIsApprovedFalse(OrderUpdateApproveRejectDto orderUpdateApproveRejectDto);
 
-        Order UpdateIsApprovedTrue(OrderUpdateApproveAcceptDto orderUpdateApproveAcceptDto);
+        Order UpdateIsApprovedTrue(OrderUpdateApproveAcceptDto orderUpdateApproveAcceptDto);*/
     }
 }

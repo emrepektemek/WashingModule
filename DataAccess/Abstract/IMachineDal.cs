@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IWarehouseDal : IEntityRepository<Warehouse>
+    public interface IMachineDal : IEntityRepository<Machine>
     {
-
     }
 }
