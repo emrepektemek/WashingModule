@@ -24,8 +24,6 @@ builder.Host.UseServiceProviderFactory(
 
 builder.Services.AddCors();
 
-
-
 var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
