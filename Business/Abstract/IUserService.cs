@@ -16,7 +16,5 @@ namespace Business.Abstract
         User Add(User user);
         User GetByMail(string email);
 
-        IDataResult<List<User>> GetUsersForCustomer();
-
     }
 }

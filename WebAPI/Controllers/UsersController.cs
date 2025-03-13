@@ -31,19 +31,5 @@ namespace WebAPI.Controllers
 
         }
 
-        [HttpGet("getusersforcustomer")]
-        public IActionResult GetUsersForCustomer()
-        {
-            var result = _userService.GetUsersForCustomer();
-
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-
-            return BadRequest(result);
-
-        }
-
     }
 }

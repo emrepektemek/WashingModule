@@ -63,45 +63,6 @@ namespace Business.Concrete
                 return new SuccessDataResult<User>(user, Messages.UserRegistered);
         }
 
-
-        [ValidationAspect(typeof(AdminRegisterValidator))]
-        public IDataResult<User> AdminRegister(AdminRegisterDto adminRegisterDto, string password)
-        {
-            byte[] passwordHash, passwordSalt;
-            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
-            var user = new User
-            { 
-                Email = adminRegisterDto.Email,
-                FirstName = adminRegisterDto.FirstName,
-                LastName = adminRegisterDto.LastName,
-                PasswordHash = passwordHash,
-                PasswordSalt = passwordSalt,
-                PhoneNumber = adminRegisterDto.PhoneNumber,
-                Gender = adminRegisterDto.Gender,
-                CreatedUserId = adminRegisterDto.CreatedUserId,
-                CreatedDate = DateTime.Now,
-            };
-
-            var userObject = _userService.Add(user);
-
-
-            if (user != null)
-            {
-                var operationClaimId = adminRegisterDto.OperationClaimId == 0 ? 4 : adminRegisterDto.OperationClaimId;
-
-                var userOperationClaimObejct = new UserOperationClaim
-                {
-                    UserId = user.Id,
-                    OperationClaimId = operationClaimId,
-                    CreatedUserId = adminRegisterDto.CreatedUserId
-                };
-
-                _userOperationClaimService.Add(userOperationClaimObejct);
-
-            }
-            return new SuccessDataResult<User>(user, Messages.UserRegistered);
-        }
-
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
             var userToCheck = _userService.GetByMail(userForLoginDto.Email);

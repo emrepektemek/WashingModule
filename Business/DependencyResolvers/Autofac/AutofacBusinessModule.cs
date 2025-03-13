@@ -21,29 +21,38 @@ namespace Business.DependencyResolvers.Autofac
         protected override void Load(ContainerBuilder builder)
         {
 
-            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
-            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
 
-            builder.RegisterType<CustomerManager>().As<ICustomerService>().SingleInstance();
-            builder.RegisterType<EfCustomerDal>().As<ICustomerDal>().SingleInstance();
+            builder.RegisterType<DefectManager>().As<IDefectService>().SingleInstance();
+            builder.RegisterType<EfDefectDal>().As<IDefectDal>().SingleInstance();
 
-            builder.RegisterType<InventoryManager>().As<IInventoryService>().SingleInstance();
-            builder.RegisterType<EfInventoryDal>().As<IInventoryDal>().SingleInstance();
+            builder.RegisterType<EmployeeManager>().As<IEmployeeService>().SingleInstance();
+            builder.RegisterType<EfEmployeeDal>().As<IEmployeeDal>().SingleInstance();
+
+            builder.RegisterType<FabricManager>().As<IFabricService>().SingleInstance();
+            builder.RegisterType<EfFabricDal>().As<IFabricDal>().SingleInstance();
+
+            builder.RegisterType<MachineManager>().As<IMachineService>().SingleInstance();
+            builder.RegisterType<EfMachineDal>().As<IMachineDal>().SingleInstance();
 
             builder.RegisterType<OrderManager>().As<IOrderService>().SingleInstance();
             builder.RegisterType<EfOrderDal>().As<IOrderDal>().SingleInstance();
 
-            builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
-            builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance();
+            builder.RegisterType<OrderProcessManager>().As<IOrderProcessService>().SingleInstance();
+            builder.RegisterType<EfOrderProcessDal>().As<IOrderProcessDal>().SingleInstance();
+
+            builder.RegisterType<PantManager>().As<IPantService>().SingleInstance();
+            builder.RegisterType<EfPantDal>().As<IPantDal>().SingleInstance();
+
+            builder.RegisterType<WashingTypeManager>().As<IWashingTypeService>().SingleInstance();
+            builder.RegisterType<EfWashingTypeDal>().As<IWashingTypeDal>().SingleInstance();
+
+
 
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EfUserDal>().As<IUserDal>();
 
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
-
-            builder.RegisterType<WarehouseManager>().As<IWarehouseService>().SingleInstance();
-            builder.RegisterType<EfWarehouseDal>().As<IWarehouseDal>().SingleInstance();
 
             builder.RegisterType<UserOperationClaimManager>().As<IUserOperationClaimService>().SingleInstance();
             builder.RegisterType<EfUserOperationClaimDal>().As<IUserOperationClaimDal>().SingleInstance();
