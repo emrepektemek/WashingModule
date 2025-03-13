@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfFabricDal: EfEntityRepositoryBase<Fabric, WashingModuleContext>, IFabricDal  
+    public class EfFabricDal : EfEntityRepositoryBase<Fabric, WashingModuleContext>, IFabricDal
     {
         private WashingModuleContext _context;
 
         public EfFabricDal(WashingModuleContext context) : base(context)
         {
-            _context = context; 
+            _context = context;
 
         }
+    }
 }

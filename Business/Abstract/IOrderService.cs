@@ -11,17 +11,7 @@ namespace Business.Abstract
 {
     public interface IOrderService
     {
-        IDataResult<List<OrderReportDto>> GetOrderReports();
-
-        IResult Add(Order order);
-
-        IDataResult<List<UserOrderOrderReportDto>> GetByCustomerId(int customerId);
-
-        IDataResult<List<OrderApproveDto>> GetOrderApproves();
-
-        IResult UpdateIsApprovedFalse(OrderUpdateApproveRejectDto orderUpdateApproveRejectDto);
-
-        IResult UpdateIsApprovedTrue(OrderUpdateApproveAcceptDto orderUpdateApproveAcceptDto);
+      
 
     }
 }
