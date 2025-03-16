@@ -13,12 +13,10 @@ namespace DataAccess.Concrete.EntityFramework
     {
 
         private WashingModuleContext _context;
-
         public EfOrderProcessDal(WashingModuleContext context) : base(context)
         {
             _context = context;
         }
-
 
     }
 }

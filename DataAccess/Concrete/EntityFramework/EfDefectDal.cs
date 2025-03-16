@@ -12,7 +12,6 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfDefectDal: EfEntityRepositoryBase<Defect, WashingModuleContext>, IDefectDal    
     {
-
         private WashingModuleContext _context;
         public EfDefectDal(WashingModuleContext context) : base(context)
         {

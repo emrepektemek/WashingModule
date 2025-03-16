@@ -14,6 +14,7 @@ namespace Business.Abstract
         IDataResult<List<UserOperationAssignmentDto>> GetUsers();
         List<OperationClaim> GetClaims(User user);
         User Add(User user);
+        void Update(User user); 
         User GetByMail(string email);
 
     }

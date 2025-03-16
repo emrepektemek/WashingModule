@@ -13,11 +13,10 @@ namespace DataAccess.Concrete.EntityFramework
     {
 
         private WashingModuleContext _context;
-
         public EfPantDal(WashingModuleContext context) : base(context)
         {
             _context = context;
-        }   
+        }
 
     }
 }

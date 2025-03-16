@@ -27,13 +27,15 @@ namespace Business.Concrete
         {         
             
             var userOperationClaimObject = new UserOperationClaim
-            {        
+            {
                 UserId = userOperationClaim.UserId,
-                OperationClaimId = userOperationClaim.OperationClaimId, 
+                OperationClaimId = userOperationClaim.OperationClaimId,
                 Status = true,
                 IsDeleted = false,
                 CreatedUserId = userOperationClaim.CreatedUserId,
-                CreatedDate = DateTime.Now
+                CreatedDate = DateTime.Now,
+                LastUpdatedUserId = userOperationClaim.LastUpdatedUserId,
+                LastUpdatedDate = DateTime.Now
             };
 
             _userOperationClaimDal.Add(userOperationClaimObject);

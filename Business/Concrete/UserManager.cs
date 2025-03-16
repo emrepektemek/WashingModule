@@ -31,6 +31,12 @@ namespace Business.Concrete
             return _userDal.Add(user);
         }
 
+        public void Update(User user)
+        {
+           _userDal.Update(user);
+             
+        }
+
         public User GetByMail(string email)
         {
             return _userDal.Get(u => u.Email == email);
@@ -42,5 +48,6 @@ namespace Business.Concrete
             return new SuccessDataResult<List<UserOperationAssignmentDto>>(_userDal.GetUsers());
         }
 
+        
     }
 }

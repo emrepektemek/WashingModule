@@ -11,11 +11,6 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class WashingModuleContext : DbContext
     {
-        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=MSI;Database=WashingModule;Trusted_Connection=True;TrustServerCertificate=True;");
-        }*/
-
         public WashingModuleContext(DbContextOptions<WashingModuleContext> options) : base(options)
         {
         }

@@ -45,22 +45,34 @@ namespace Business.Concrete
                 PasswordSalt = passwordSalt,
                 PhoneNumber = userForRegisterDto.PhoneNumber,
                 Gender = userForRegisterDto.Gender,
+                CreatedDate = DateTime.Now,
+                LastUpdatedDate = DateTime.Now,
             };
 
             var userObject = _userService.Add(user);
 
-            if (user != null)
+            if (userObject == null)
             {
-                var userOperationClaimObejct = new UserOperationClaim
-                {
-                    UserId = user.Id,
-                    OperationClaimId = 4
-                };
+                return new ErrorDataResult<User>(user, Messages.UserNotRegistered);
+            }
 
-                _userOperationClaimService.Add(userOperationClaimObejct);
+            userObject.CreatedUserId = userObject.Id;
+            userObject.LastUpdatedUserId = userObject.Id;
 
-            }              
-                return new SuccessDataResult<User>(user, Messages.UserRegistered);
+            _userService.Update(userObject);
+           
+            var userOperationClaimObejct = new UserOperationClaim
+            {
+                UserId = userObject.Id,
+                OperationClaimId = 1,
+                CreatedUserId = userObject.Id,
+                LastUpdatedUserId = userObject.Id,
+            };
+
+            _userOperationClaimService.Add(userOperationClaimObejct);
+
+                          
+             return new SuccessDataResult<User>(user, Messages.UserRegistered);
         }
 
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)

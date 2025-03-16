@@ -15,11 +15,10 @@ namespace DataAccess.Concrete.EntityFramework
     {
 
         private WashingModuleContext _context;
-
         public EfUserOperationClaimDal(WashingModuleContext context) : base(context)
         {
             _context = context;
-        }   
+        }
 
     }
 }
