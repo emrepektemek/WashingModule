@@ -41,5 +41,8 @@ namespace Business.Constants
         public static string IventoryNotReduced = "inventory could not be reduced";
         public static string IventoryZeroProduct = "No product left";
         public static string IventoryNotEnoughProduct = "Don't have enough product";
+
+        public static string MachineAdded = "Machine added";
+        public static string MachineAlreadtExists = "This machine already exists";
     }
 }
