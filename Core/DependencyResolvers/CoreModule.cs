@@ -21,7 +21,6 @@ namespace Core.DependencyResolvers
             serviceCollection.AddMemoryCache();
             serviceCollection.AddSingleton<ICacheManager, MemoryCacheManager>();
 
-            // UserContextService
             serviceCollection.AddScoped<IUserContextService, UserContextService>();
         }
     }

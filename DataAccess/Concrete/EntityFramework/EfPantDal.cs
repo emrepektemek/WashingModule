@@ -1,6 +1,7 @@
 ﻿using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,5 +19,27 @@ namespace DataAccess.Concrete.EntityFramework
             _context = context;
         }
 
+        public List<PantFabricDto> GetAllWithFabric()
+        {
+            var result = from p in _context.Pants
+                         join f in _context.Fabrics
+                         on p.FabricId equals f.Id
+                         select new PantFabricDto
+                         {
+                            FabricId = f.Id,
+                            FabricMaterials = f.FabricMaterials,
+                            ModelName = p.ModelName,
+                            Id = p.Id,
+                            CreatedUserId = p.CreatedUserId,
+                            CreatedDate = p.CreatedDate,
+                            LastUpdatedUserId = p.LastUpdatedUserId,
+                            LastUpdatedDate = p.LastUpdatedDate,
+                            Status = p.Status,
+                            IsDeleted = p.IsDeleted
+
+                         };
+
+            return result.ToList(); 
+        }
     }
 }

@@ -9,6 +9,6 @@ namespace Entities.Concrete
 {
     public class Fabric: AuditBaseEntity, IEntity
     {
-        public string FabricName { get; set; }
+        public string FabricMaterials { get; set; }
     }
 }

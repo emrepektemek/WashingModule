@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.UserContext;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
@@ -25,6 +27,7 @@ namespace Business.Concrete
             _userContextService = userContextService;
         }
 
+        [ValidationAspect(typeof(MachineValidator))]
         public IResult Add(Machine machine)
         {
             var machineToCheck = MachineExists(machine);
@@ -33,7 +36,6 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.MachineAlreadtExists);
             }
-
 
             int userId = _userContextService.GetUserId();
 
@@ -48,8 +50,8 @@ namespace Business.Concrete
                 MachineType = machine.MachineType,
                 CreatedUserId = userId,  
                 CreatedDate = DateTime.Now,
-                LastUpdatedDate = DateTime.Now,
                 LastUpdatedUserId = userId,
+                LastUpdatedDate = DateTime.Now,             
                 Status = true,
                 IsDeleted = false  
             };
