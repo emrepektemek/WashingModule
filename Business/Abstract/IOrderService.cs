@@ -11,7 +11,7 @@ namespace Business.Abstract
 {
     public interface IOrderService
     {
-      
+        IResult Add(Order order);
 
     }
 }

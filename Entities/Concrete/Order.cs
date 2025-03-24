@@ -9,10 +9,9 @@ namespace Entities.Concrete
 {
     public class Order: AuditBaseEntity, IEntity
     {
-        public string OrderId { get; set; }
         public int PantId { get; set; }
         public int WashingTypeId { get; set; }
-        public int? PantQuantity { get; set; }
+        public int PantQuantity { get; set; }
         public string? Shift { get; set; }
 
     }

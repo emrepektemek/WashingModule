@@ -7,11 +7,11 @@ namespace WebAPI.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class MachineController : Controller
+    public class MachinesController : Controller
     {
 
         private IMachineService _machineService;
-        public MachineController(IMachineService machineService)
+        public MachinesController(IMachineService machineService)
         {
             _machineService = machineService;
         }

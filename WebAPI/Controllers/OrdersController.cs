@@ -17,7 +17,23 @@ namespace WebAPI.Controllers
             _orderService = orderService;
         }
 
-    
-        
+
+        [HttpPost("add")]
+        public ActionResult Add(Order order)
+        {
+            var result = _orderService.Add(order);
+
+            if (result.Success)
+            {
+                return Ok(result);
+
+            }
+
+            return BadRequest(result);
+
+
+        }
+
+
     }
 }

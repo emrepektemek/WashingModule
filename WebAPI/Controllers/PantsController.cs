@@ -5,11 +5,11 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PantController : Controller
+    public class PantsController : Controller
     {
        private IPantService _pantService;
 
-        public PantController(IPantService pantService)
+        public PantsController(IPantService pantService)
         {
             _pantService = pantService;
         }

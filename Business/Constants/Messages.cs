@@ -31,18 +31,13 @@ namespace Business.Constants
         public static string CreatedCustomer = "Customer created";
         public static string CategoryNotExist = "Category does not exist";
         public static string userClaimIdNotUser = "The account is not a user";
-        public static string OrderCreated = "Order created";
-        public static string OrderNotExist = "Order does not exist";
-        public static string OrderIsApprovedRejected = "Order rejected";
-        public static string OrderIsApprovedAccept = "Order accepted";
-        public static string SelectWarehouseId = "Warehouse is required";
-        public static string WarehouseNotExist = "Warehouse does not exist";
-        public static string IventoryNotExist = "Iventory does not exist";
-        public static string IventoryNotReduced = "inventory could not be reduced";
-        public static string IventoryZeroProduct = "No product left";
-        public static string IventoryNotEnoughProduct = "Don't have enough product";
+        
+        
 
         public static string MachineAdded = "Machine added";
         public static string MachineAlreadtExists = "This machine already exists";
+
+        public static string OrderCreated = "Order created";
+        public static string OrderNotExist = "Order does not exist";
     }
 }
