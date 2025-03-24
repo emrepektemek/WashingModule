@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IOrderProcessDal: IEntityRepository<OrderProcess>  
+    public interface IWashDal: IEntityRepository<Wash>
     {
     }
 }

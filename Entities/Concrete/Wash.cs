@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Order: AuditBaseEntity, IEntity
+    public class Wash: AuditBaseEntity, IEntity
     {
-        public int PantId { get; set; }
-        public int PantQuantity { get; set; }
-
+        public int OrderId { get; set; }
+        public int WashingTypeId { get; set; }
+        public string Shift { get; set; }
     }
 }

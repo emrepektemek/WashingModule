@@ -9,14 +9,12 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfOrderProcessDal: EfEntityRepositoryBase<OrderProcess, WashingModuleContext>, IOrderProcessDal    
+    public class EfQualityControlDal : EfEntityRepositoryBase<QualityControl, WashingModuleContext>, IQualityControlDal
     {
-
         private WashingModuleContext _context;
-        public EfOrderProcessDal(WashingModuleContext context) : base(context)
+        public EfQualityControlDal(WashingModuleContext context) : base(context)
         {
             _context = context;
         }
-
     }
 }

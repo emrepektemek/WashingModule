@@ -19,9 +19,10 @@ namespace DataAccess.DependencyResolvers.Autofac
             builder.RegisterType<EfEmployeeDal>().As<IEmployeeDal>().InstancePerLifetimeScope();
             builder.RegisterType<EfFabricDal>().As<IFabricDal>().InstancePerLifetimeScope();
             builder.RegisterType<EfMachineDal>().As<IMachineDal>().InstancePerLifetimeScope();
-            builder.RegisterType<EfOrderDal>().As<IOrderDal>().InstancePerLifetimeScope();
-            builder.RegisterType<EfOrderProcessDal>().As<IOrderProcessDal>().InstancePerLifetimeScope();
+            builder.RegisterType<EfOrderDal>().As<IOrderDal>().InstancePerLifetimeScope();      
             builder.RegisterType<EfPantDal>().As<IPantDal>().InstancePerLifetimeScope();
+            builder.RegisterType<EfQualityControlDal>().As<IQualityControlDal>().InstancePerLifetimeScope();
+            builder.RegisterType<EfWashDal>().As<IWashDal>().InstancePerLifetimeScope();
             builder.RegisterType<EfWashingTypeDal>().As<IWashingTypeDal>().InstancePerLifetimeScope();
    
             builder.RegisterType<EfUserDal>().As<IUserDal>().InstancePerLifetimeScope();

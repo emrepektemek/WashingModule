@@ -37,14 +37,17 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<OrderManager>().As<IOrderService>().SingleInstance();
             builder.RegisterType<EfOrderDal>().As<IOrderDal>().SingleInstance();
 
-            builder.RegisterType<OrderProcessManager>().As<IOrderProcessService>().SingleInstance();
-            builder.RegisterType<EfOrderProcessDal>().As<IOrderProcessDal>().SingleInstance();
-
             builder.RegisterType<PantManager>().As<IPantService>().SingleInstance();
             builder.RegisterType<EfPantDal>().As<IPantDal>().SingleInstance();
 
+            builder.RegisterType<QualityControlManager>().As<IQualityControlService>().SingleInstance();
+            builder.RegisterType<EfQualityControlDal>().As<IQualityControlDal>().SingleInstance();
+
             builder.RegisterType<WashingTypeManager>().As<IWashingTypeService>().SingleInstance();
             builder.RegisterType<EfWashingTypeDal>().As<IWashingTypeDal>().SingleInstance();
+
+            builder.RegisterType<WashManager>().As<IWashService>().SingleInstance();
+            builder.RegisterType<EfWashDal>().As<IWashDal>().SingleInstance();
 
 
 

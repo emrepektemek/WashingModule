@@ -42,10 +42,8 @@ namespace Business.Concrete
 
             var newOrder = new Order
             {
-                PantId = order.PantId,
-                WashingTypeId = order.WashingTypeId,
-                PantQuantity = order.PantQuantity,
-                Shift = null,
+                PantId = order.PantId,          
+                PantQuantity = order.PantQuantity,        
                 CreatedUserId = userId,
                 CreatedDate = DateTime.Now,
                 LastUpdatedUserId = userId,

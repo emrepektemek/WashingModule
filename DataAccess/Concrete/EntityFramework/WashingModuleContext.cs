@@ -22,10 +22,11 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Defect> Defects { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Fabric> Fabrics { get; set; }
-        public DbSet<Order> Orders { get; set; }
         public DbSet<Machine> Machines { get; set; }
-        public DbSet<OrderProcess> OrderProcesses { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<Pant> Pants { get; set; }
+        public DbSet<QualityControl> QualityControls { get; set; }
+        public DbSet<Wash> Washes { get; set; }
         public DbSet<WashingType> WashingTypes { get; set; }
 
 

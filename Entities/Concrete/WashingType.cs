@@ -10,5 +10,6 @@ namespace Entities.Concrete
     public class WashingType: AuditBaseEntity, IEntity  
     {
         public string WashingTypeName { get; set; } 
+        public int WashingTime { get; set; }
     }
 }

@@ -15,8 +15,6 @@ namespace Business.ValidationRules.FluentValidation
 
             RuleFor(o => o.PantId).GreaterThan(0).WithMessage("Pant model required");
 
-            RuleFor(o => o.WashingTypeId) .GreaterThan(0).WithMessage("Washing type required");
-
             RuleFor(o => o.PantQuantity).GreaterThan(0).WithMessage("Pant quantity required");
 
         }

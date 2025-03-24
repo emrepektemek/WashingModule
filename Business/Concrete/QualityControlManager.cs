@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    public class OrderProcessManager: IOrderProcessService
+    public class QualityControlManager: IQualityControlService
     {
     }
 }
