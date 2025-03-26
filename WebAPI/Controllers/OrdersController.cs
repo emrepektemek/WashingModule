@@ -31,6 +31,19 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
 
+        }
+
+        [HttpGet("getallwhitpant")]
+        public IActionResult GetAllWithPant()
+        {
+            var result = _orderService.GetAllWithPant();
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
 
         }
 

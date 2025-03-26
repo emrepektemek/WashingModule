@@ -9,6 +9,7 @@ namespace Entities.Concrete
 {
     public class Order: AuditBaseEntity, IEntity
     {
+        public string OrderNumber { get; set; } = "00000000";
         public int PantId { get; set; }
         public int PantQuantity { get; set; }
 

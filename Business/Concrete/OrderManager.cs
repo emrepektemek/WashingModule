@@ -7,6 +7,7 @@ using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.UserContext;
 using Core.Entities.Concrete;
 using Core.Utilities.Business;
+using Core.Utilities.Helpers;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
@@ -37,11 +38,11 @@ namespace Business.Concrete
         [ValidationAspect(typeof(OrderValidator))]
         public IResult Add(Order order)
         {
-
             int userId = _userContextService.GetUserId();
 
             var newOrder = new Order
             {
+                OrderNumber = OrderNumberGenerator.Generate(),
                 PantId = order.PantId,          
                 PantQuantity = order.PantQuantity,        
                 CreatedUserId = userId,
@@ -52,10 +53,14 @@ namespace Business.Concrete
                 IsDeleted = false
             };
 
-
             _orderDal.Add(newOrder);
 
             return new SuccessResult(Messages.OrderCreated);
+        }
+
+        public IDataResult<List<OrderPantDto>> GetAllWithPant()
+        {
+            return new SuccessDataResult<List<OrderPantDto>>(_orderDal.GetAllWithPant());
         }
     }
 

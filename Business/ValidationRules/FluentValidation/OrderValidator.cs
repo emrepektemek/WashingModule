@@ -13,9 +13,14 @@ namespace Business.ValidationRules.FluentValidation
         public OrderValidator()
         {
 
-            RuleFor(o => o.PantId).GreaterThan(0).WithMessage("Pant model required");
+            RuleFor(o => o.PantId).GreaterThan(0).WithMessage("Pant model is required");
 
-            RuleFor(o => o.PantQuantity).GreaterThan(0).WithMessage("Pant quantity required");
+            RuleFor(o => o.PantId).NotEmpty().WithMessage("Pant model is required");
+    
+
+            RuleFor(o => o.PantQuantity).GreaterThan(0).WithMessage("Pant quantity is required");
+
+            RuleFor(o => o.PantQuantity).NotEmpty().WithMessage("Pant quantity is required.");
 
         }
     }

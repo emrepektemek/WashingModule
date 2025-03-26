@@ -13,5 +13,7 @@ namespace Business.Abstract
     {
         IResult Add(Order order);
 
+        IDataResult<List<OrderPantDto>> GetAllWithPant();
+
     }
 }
