@@ -39,5 +39,9 @@ namespace Business.Constants
 
         public static string OrderCreated = "Order created";
         public static string OrderNotExist = "Order does not exist";
+
+        public static string WashAdded = "Washing started";
+        public static string WashAlreadtExists = "This wash process was already created";
+        public static string WashInProgress = "There is currently a washing process, washing cannot be started";
     }
 }

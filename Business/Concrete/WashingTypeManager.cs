@@ -23,5 +23,10 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<WashingType>>(_washingTypeDal.GetAll());  
         }
+
+        public WashingType GetById(int id)
+        {
+            return _washingTypeDal.Get(wt => wt.Id == id);
+        }
     }
 }

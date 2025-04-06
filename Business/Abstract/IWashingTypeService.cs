@@ -10,6 +10,7 @@ namespace Business.Abstract
 {
     public interface IWashingTypeService
     {
-        IDataResult<List<WashingType>> GetAll();    
+        IDataResult<List<WashingType>> GetAll();
+        WashingType GetById(int id);
     }
 }

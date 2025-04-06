@@ -11,5 +11,6 @@ namespace Entities.Concrete
     {
         public string WashingTypeName { get; set; } 
         public int WashingTime { get; set; }
+        public string Description { get; set; } 
     }
 }
