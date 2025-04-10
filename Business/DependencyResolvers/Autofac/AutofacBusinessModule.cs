@@ -25,6 +25,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<DefectManager>().As<IDefectService>().SingleInstance();
             builder.RegisterType<EfDefectDal>().As<IDefectDal>().SingleInstance();
 
+            builder.RegisterType<DefectCategoryManager>().As<IDefectCategoryService>().SingleInstance();
+            builder.RegisterType<EfDefectCategoryDal>().As<IDefectCategoryDal>().SingleInstance();
+
             builder.RegisterType<EmployeeManager>().As<IEmployeeService>().SingleInstance();
             builder.RegisterType<EfEmployeeDal>().As<IEmployeeDal>().SingleInstance();
 
@@ -33,6 +36,9 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<MachineManager>().As<IMachineService>().SingleInstance();
             builder.RegisterType<EfMachineDal>().As<IMachineDal>().SingleInstance();
+
+            builder.RegisterType<OrderDefectManager>().As<IOrderDefectService>().SingleInstance();
+            builder.RegisterType<EfOrderDefectDal>().As<IOrderDefectDal>().SingleInstance();
 
             builder.RegisterType<OrderManager>().As<IOrderService>().SingleInstance();
             builder.RegisterType<EfOrderDal>().As<IOrderDal>().SingleInstance();
