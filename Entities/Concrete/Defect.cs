@@ -9,10 +9,8 @@ namespace Entities.Concrete
 {
     public class Defect: AuditBaseEntity, IEntity   
     {
-        public int OrderId { get; set; }
+        public int DefectCategoryId { get; set; }
         public string DefectName { get; set; }
-        public bool IsDefect { get; set; }
-        public int RowNumber { get; set; }
-
+        public string Description { get; set; }
     }
 }

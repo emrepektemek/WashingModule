@@ -95,7 +95,7 @@ namespace Business.Concrete
                 return true;
             }
 
-            var washingType = _washingTypeService.GetById(wash.WashingTypeId);
+            var washingType = _washingTypeService.GetById(lastWash.WashingTypeId);
 
             if (washingType == null)
             {
