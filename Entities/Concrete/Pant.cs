@@ -10,7 +10,6 @@ namespace Entities.Concrete
     public class Pant: AuditBaseEntity, IEntity 
     {
         public int FabricId { get; set; }
-
         public string ModelName { get; set; }
     }
 }

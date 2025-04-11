@@ -17,6 +17,5 @@ namespace DataAccess.Concrete.EntityFramework
             _context = context;
         }
     }
-    {
-    }
+    
 }
