@@ -2,9 +2,11 @@
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -47,6 +49,28 @@ namespace DataAccess.Concrete.EntityFramework
 
             return result.ToList();
         }
+
+        public OrderDefect GetNoTracking(Expression<Func<OrderDefect, bool>> filter)
+        {
+            return _context.OrderDefects.AsNoTracking().FirstOrDefault(filter);
+        }
+
+        public void UpdateAsNoTracking(OrderDefect entity)
+        {
+            var local = _context.Set<OrderDefect>()
+                                .Local
+                                .FirstOrDefault(entry => entry.Id == entity.Id);
+
+            if (local != null)
+            {
+                _context.Entry(local).State = EntityState.Detached; 
+            }
+
+            _context.Attach(entity); 
+            _context.Entry(entity).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
     }
     
   

@@ -43,5 +43,11 @@ namespace Business.Constants
         public static string WashAdded = "Washing started";
         public static string WashAlreadtExists = "This wash process was already created";
         public static string WashInProgress = "There is currently a washing process, washing cannot be started";
+        public static string MachineBusy = "Machine busy, washing cannot be started";
+
+        public static string QualityControlCreated = "Quality Control created";
+
+        public static string OrderDefectAdded = "Desicion added";
+        public static string OrderDefectUpdated = "Desicion updated";
     }
 }

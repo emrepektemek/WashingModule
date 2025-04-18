@@ -24,7 +24,7 @@ namespace DataAccess.Concrete.EntityFramework
             var result = from d in _context.Defects
                          join dc in _context.DefectCategories
                          on d.DefectCategoryId equals dc.Id
-                         orderby d.CreatedDate descending
+                         orderby d.Id
                          select new DefectWithCategoryDto
                          {
                              DefectCategoryId = d.DefectCategoryId,

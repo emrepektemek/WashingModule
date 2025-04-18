@@ -12,9 +12,10 @@ namespace Business.Abstract
     public interface IWashService
     {
         IDataResult<List<WashingDto>> GetAll();
-        public IResult Add(Wash wash);
-        public Wash WashExists(Wash wash);
-        public bool WashTimeControl(Wash wash);
+        IResult Add(Wash wash);
+        Wash WashExists(Wash wash);
+        bool WashTimeControl(Wash wash);
+        bool MachineBusyControl(Wash wash);
 
     }
 }

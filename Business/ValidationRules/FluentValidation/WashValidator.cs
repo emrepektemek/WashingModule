@@ -14,9 +14,11 @@ namespace Business.ValidationRules.FluentValidation
         public WashValidator()
         {
 
-            RuleFor(w => w.OrderId).NotEmpty().WithMessage("Order Id is required.");
+            RuleFor(w => w.OrderId).GreaterThan(0).WithMessage("Order Id is required.");
 
             RuleFor(w => w.WashingTypeId).GreaterThan(0).WithMessage("Washing type is required");
+
+            RuleFor(w => w.MachineId).GreaterThan(0).WithMessage("Machine is required");
 
             RuleFor(w => w.Shift).NotEmpty().WithMessage("Shift is required.");        
         }

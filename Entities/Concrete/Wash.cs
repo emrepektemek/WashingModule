@@ -11,6 +11,7 @@ namespace Entities.Concrete
     {
         public int OrderId { get; set; }
         public int WashingTypeId { get; set; }
+        public int MachineId { get; set; }
         public string Shift { get; set; }
     }
 }

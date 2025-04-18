@@ -26,10 +26,19 @@ namespace WebAPI.Controllers
                 return Ok(result);
         
             }
-
             return BadRequest(result);
+        }
 
+        [HttpGet("getall")]
+        public IActionResult GetAll()
+        {
+            var result = _machineService.GetAll();
 
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
 
     }

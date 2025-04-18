@@ -40,6 +40,8 @@ namespace Business.Concrete
 
             var timeControl = WashTimeControl(wash);
 
+            var machineBusyControl = MachineBusyControl(wash);
+
             if (washToCheck != null)
             {
                 return new ErrorResult(Messages.WashAlreadtExists);
@@ -48,6 +50,11 @@ namespace Business.Concrete
             if (!timeControl)
             {
                 return new ErrorResult(Messages.WashInProgress);
+            }
+
+            if (!machineBusyControl)
+            {
+                return new ErrorResult(Messages.MachineBusy);
             }
 
             int userId = _userContextService.GetUserId();
@@ -61,6 +68,7 @@ namespace Business.Concrete
             {
                 OrderId = wash.OrderId,
                 WashingTypeId = wash.WashingTypeId,
+                MachineId = wash.MachineId,
                 Shift = wash.Shift,
                 CreatedUserId = userId,
                 CreatedDate = DateTime.Now,
@@ -113,5 +121,30 @@ namespace Business.Concrete
             return true;
 
         }
+
+
+        public bool MachineBusyControl(Wash wash)
+        {
+            var lastMachineWash = _washDal.GetAll(w => w.MachineId == wash.MachineId).OrderByDescending(w => w.CreatedDate).FirstOrDefault();
+
+            if (lastMachineWash == null)
+            {
+                return true;
+            }
+
+            var washingType = _washingTypeService.GetById(lastMachineWash.WashingTypeId);
+
+            var machineWashEndTime = lastMachineWash.CreatedDate.AddMinutes(washingType.WashingTime);
+
+            if (DateTime.Now <= machineWashEndTime)
+            {
+                return false;
+            }
+
+            return true;
+
+        }
+
+
     }
 }

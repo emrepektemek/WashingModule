@@ -27,16 +27,23 @@ namespace DataAccess.Concrete.EntityFramework
                          on w.WashingTypeId equals wt.Id
                          join p in _context.Pants
                          on o.PantId equals p.Id
+                         join m in _context.Machines
+                         on w.MachineId equals m.Id
+                         
                          orderby w.CreatedDate descending
                          select new WashingDto
                          {
                              OrderNumber = o.OrderNumber,
                              PantId = o.PantId,
+                             PantQuantity = o.PantQuantity,
                              ModelName = p.ModelName,
                              WashingTypeName = wt.WashingTypeName,
                              WashingTime = wt.WashingTime,
                              OrderId = w.OrderId,
                              WashingTypeId = w.WashingTypeId,
+                             MachineId = w.MachineId,
+                             MachineName = m.MachineName,
+                             MachineType = m.MachineType,
                              Shift = w.Shift,
                              Id = w.Id,
                              CreatedUserId = w.CreatedUserId,

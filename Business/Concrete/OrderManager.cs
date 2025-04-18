@@ -26,13 +26,16 @@ namespace Business.Concrete
     {
         private IOrderDal _orderDal;
 
+        private IQualityControlService _qualityControlService;
+
         private IUserContextService _userContextService;
 
 
-        public OrderManager(IOrderDal orderDal, IUserContextService userContextService)
+        public OrderManager(IOrderDal orderDal, IUserContextService userContextService, IQualityControlService qualityControlService)
         {
             _orderDal = orderDal;
             _userContextService = userContextService;
+            _qualityControlService = qualityControlService;
         }
 
         [ValidationAspect(typeof(OrderValidator))]
@@ -54,6 +57,10 @@ namespace Business.Concrete
             };
 
             _orderDal.Add(newOrder);
+
+            int newOrderId = newOrder.Id;
+
+            _qualityControlService.FirstCreate(newOrderId);
 
             return new SuccessResult(Messages.OrderCreated);
         }

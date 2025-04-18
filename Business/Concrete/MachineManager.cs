@@ -63,9 +63,15 @@ namespace Business.Concrete
             
         }
 
+        public IDataResult<List<Machine>> GetAll()
+        {
+            return new SuccessDataResult<List<Machine>>(_machineDal.GetAll());
+
+        }
+
         public Machine MachineExists(Machine machine)
         {
-            return _machineDal.Get(m => m.MachineName == machine.MachineName && m.MachineType == machine.MachineType);
+            return _machineDal.Get(m => m.MachineName == machine.MachineName);
         }
 
        

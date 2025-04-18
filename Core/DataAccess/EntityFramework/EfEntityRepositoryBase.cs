@@ -48,7 +48,7 @@ namespace Core.DataAccess.EntityFramework
         public void Update(TEntity entity)
         {     
             var uptadedEntity = _context.Entry(entity);
-            uptadedEntity.State = EntityState.Modified;
+                uptadedEntity.State = EntityState.Modified;
             _context.SaveChanges();        
         }
 

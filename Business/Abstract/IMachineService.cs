@@ -10,8 +10,9 @@ namespace Business.Abstract
 {
     public interface IMachineService
     {
-        public IResult Add(Machine machine);
-        public Machine MachineExists(Machine machine);
+        IResult Add(Machine machine);
+        Machine MachineExists(Machine machine);
+        IDataResult<List<Machine>> GetAll();
 
     }
 }
