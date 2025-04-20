@@ -11,5 +11,8 @@ namespace Business.Abstract
     public interface IQualityControlService
     {
         IResult FirstCreate(int orderId);
+
+        IDataResult<List<QualityControl>> GetAll();
+
     }
 }

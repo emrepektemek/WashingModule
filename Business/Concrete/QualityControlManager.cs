@@ -4,6 +4,7 @@ using Core.CrossCuttingConcerns.UserContext;
 using Core.Utilities.Helpers;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace Business.Concrete
             var newQualityControl = new QualityControl
             {
                 OrderId = orderId,         
-                IsCompleted = false,
+                Result = null,
                 Shift = null,
                 CreatedUserId = userId,
                 CreatedDate = DateTime.Now,
@@ -45,6 +46,11 @@ namespace Business.Concrete
             _qualityControlDal.Add(newQualityControl);
 
             return new SuccessResult(Messages.QualityControlCreated);
+        }
+
+        public IDataResult<List<QualityControl>> GetAll()
+        {
+            return new SuccessDataResult<List<QualityControl>>(_qualityControlDal.GetAll());
         }
     }
 }

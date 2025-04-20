@@ -10,7 +10,7 @@ namespace Entities.Concrete
     public class QualityControl: AuditBaseEntity, IEntity
     {
         public int OrderId { get; set; }
-        public bool IsCompleted { get; set; }
+        public string? Result { get; set; }
         public string? Shift { get; set; }
     }
 }
