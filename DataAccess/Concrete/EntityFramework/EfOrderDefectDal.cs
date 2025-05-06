@@ -58,8 +58,8 @@ namespace DataAccess.Concrete.EntityFramework
         public void UpdateAsNoTracking(OrderDefect entity)
         {
             var local = _context.Set<OrderDefect>()
-                                .Local
-                                .FirstOrDefault(entry => entry.Id == entity.Id);
+            .Local
+            .FirstOrDefault(entry => entry.Id == entity.Id);
 
             if (local != null)
             {
@@ -70,8 +70,6 @@ namespace DataAccess.Concrete.EntityFramework
             _context.Entry(entity).State = EntityState.Modified;
             _context.SaveChanges();
         }
-
     }
     
-  
 }

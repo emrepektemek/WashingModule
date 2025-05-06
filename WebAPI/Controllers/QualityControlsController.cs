@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -23,6 +24,19 @@ namespace WebAPI.Controllers
             {
                 return Ok(result);
             }
+            return BadRequest(result);
+        }
+
+        [HttpPost("update")]
+        public ActionResult Update(QualityControl qualityControl)
+        {
+            var result = _qualityControlService.Update(qualityControl);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
             return BadRequest(result);
         }
     }

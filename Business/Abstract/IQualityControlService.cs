@@ -14,5 +14,9 @@ namespace Business.Abstract
 
         IDataResult<List<QualityControl>> GetAll();
 
+        IResult Update(QualityControl qualityControl);
+
+        QualityControl GetCurrentQualityControl(QualityControl qualityControl);
+
     }
 }

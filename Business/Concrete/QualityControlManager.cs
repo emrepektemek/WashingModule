@@ -34,7 +34,6 @@ namespace Business.Concrete
             {
                 OrderId = orderId,         
                 Result = null,
-                Shift = null,
                 CreatedUserId = userId,
                 CreatedDate = DateTime.Now,
                 LastUpdatedUserId = userId,
@@ -52,5 +51,35 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<QualityControl>>(_qualityControlDal.GetAll());
         }
+  
+        public IResult Update(QualityControl qualityControl)
+        {
+            int userId = _userContextService.GetUserId();
+
+            var currentQualityControl = GetCurrentQualityControl(qualityControl);
+
+            var uptadeQualityControl = new QualityControl
+            {
+                Id = currentQualityControl.Id,
+                OrderId = qualityControl.OrderId,
+                Result = qualityControl.Result,
+                CreatedUserId = currentQualityControl.CreatedUserId,
+                CreatedDate = currentQualityControl.CreatedDate,
+                LastUpdatedUserId = userId,
+                LastUpdatedDate = DateTime.Now,
+                Status = true,
+                IsDeleted = false
+            };
+
+            _qualityControlDal.UpdateAsNoTracking(uptadeQualityControl);
+
+            return new SuccessResult(Messages.QualityControlUpdated);
+        }
+
+        public QualityControl GetCurrentQualityControl(QualityControl qualityControl)
+        {
+            return _qualityControlDal.Get(qc => qc.OrderId == qualityControl.OrderId);
+        }
+
     }
 }
